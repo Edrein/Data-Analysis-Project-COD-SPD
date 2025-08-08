@@ -1,7 +1,8 @@
 # Data Analysis Project – COD/SPD
 
 # Project Overview
-This project analyzes sterilization and kit usage data for the College of Dentistry's Sterile Processing Department (SPD).  
+This project analyzes sterilization and kit usage data for the College of Dentistry's Sterile Processing Department (SPD). The main idea was to create a tableau visualization to show which clinics utilize the most inventory, how that inventory is being processed, and the general turnover rate. The real world data pertaining to time was compromised and had to be replaced by simulated numbers generated in the project itself, so ultimately the project has created a solid framework for future attempts at a functional live model from the SPD.  
+
 It combines:
 - A **Tableau dashboard** for interactive visual exploration.  
 - A **Jupyter Notebook** for data cleaning and analysis. 
@@ -90,6 +91,10 @@ Data-Analysis-Project-COD-SPD/
 - **Git & GitHub** — Track changes and share the project
 
 ---
+
+## Sources:
+- Bulk of Data given by the Sterilization Department Supervisor collected from Axium program. https://dentistry.uky.edu/
+- 'Kit Date Out', 'Kit Time Out' and 'Kit Time In' data is all generated within the notebook as the original data was null.
 
 ## Notes for Reviewers
 - If you only want to explore the data visually, open the **Tableau dashboard** — no coding needed.

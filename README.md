@@ -75,5 +75,6 @@ Data-Analysis-Project-COD-SPD/
 - If you only want to explore the data visually, open the **Tableau dashboard** — no coding needed.
 - If you want to see *how* the data was prepared, read and run the `notebook.ipynb`.
 - You can use the `Kit Location` filter to drill down into data for specific clinics.
+- The color scheme is based on actual colors used in the SPD department for color coordination of clinic assets.
 
 ---

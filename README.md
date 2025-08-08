@@ -6,7 +6,7 @@ It combines:
 - A **Tableau dashboard** for interactive visual exploration.  
 - A **Jupyter Notebook** for data cleaning and analysis. 
 - Data cleaning and Analysis done via a combination of **Pandas** and **SQLite**.
-- A combination of real world data provided by the SPD and simulated data to maintain compliance with regulations.
+- A combination of **real world data provided by the SPD** and **simulated data** to maintain compliance with regulations.
 
 ## Data Dictionary
 

@@ -6,6 +6,26 @@ It combines:
 - A **Tableau dashboard** for interactive visual exploration.  
 - A **Jupyter Notebook** for data cleaning and analysis. 
 - Data cleaning and Analysis done via a combination of **Pandas** and **SQLite**.
+- A combination of real world data provided by the SPD and simulated data to maintain compliance with regulations.
+
+## Data Dictionary
+
+| Field Name            | Description                                                   | Type                | Allowed Values      | Example                         | Null % | Unique Values | Min | Max | Units | Notes |
+|-----------------------|---------------------------------------------------------------|---------------------|---------------------|----------------------------------|--------|---------------|-----|-----|-------|-------|
+| Kit                   | Unique identifier for the kit (alphanumeric).                 | string (ID)         |                     | SII21058402N                    |        |               |     |     |       | Stable key used to join kit-level and movement records. |
+| Kit Type Description  | Human-readable description of kit type.                       | string (category)   |                     | Bur Block 9 - Temporization     |        |               |     |     |       | Maps to code in 'Kit Type' if a code system exists. |
+| Kit Item Cost/Value   | Cost or value of a single item within the kit.                 | float (nullable)    |                     | 2.27                            |        |               |     |     | USD   | Consider rounding to 2 decimals; check whether value is source-estimated or calculated. |
+| Item Type             | Category for items within the kit.                            | string (category)   | Bur Block           | Bur Block                       |        |               |     |     |       | Enumerate all item categories for validation in Tableau. |
+| Sterilization Method  | Method used to sterilize the kit.                              | string (category)   | Steam               | Steam                           |        |               |     |     |       | List all valid methods (e.g., Steam, EO gas, Dry heat) if applicable. |
+| Kit Cost/Value        | Total cost or value of the entire kit.                         | float (nullable)    |                     |                                  |        |               |     |     | USD   | Might be blank in source; confirm whether this is captured or derived. |
+| Kit Dispensary        | Dispensary or department responsible for the kit.              | string (nullable)   |                     |                                  |        |               |     |     |       | If controlled list exists, capture allowed location names/codes. |
+| Kit Out Of Service    | Indicates whether the kit is out of service.                   | boolean / string    | Y, N                |                                  |        |               |     |     |       | Confirm true/false representation (Y/N vs. 1/0 vs. date of OOS). |
+| Kit Type              | Coded kit type identifier.                                     | string (code)       | BBTEMP              | BBTEMP                          |        |               |     |     |       | Code should map to 'Kit Type Description' (maintain a reference table). |
+| Kit Location          | Clinic or physical location of the kit at time of event.       | string (category)   | FPC                 | FPC                             |        |               |     |     |       | Maintain a location directory (full name, address) for Tableau tooltips. |
+| Kit Date Out          | Calendar date the kit was checked out/used.                    | date                |                     | 2025-01-07                      |        |               |     |     |       | Ensure stored as date (not string) for correct Tableau date functions. |
+| Kit Time Out          | Time the kit left the dispensary/stock.                        | time                |                     | 12:15:00                        |        |               |     |     |       | Store as time; combine with 'Kit Date Out' to create a timestamp if needed. |
+| Kit Time In           | Time the kit returned to inventory.                            | time                |                     | 20:15:00                        |        |               |     |     |       | If return occurs on a different date, capture 'Kit Date In' or compute using rotation logic. |
+
 
 **Key insights you can explore:**
 - Breakdowns by **Kit Type** and **Sterilization Method**
